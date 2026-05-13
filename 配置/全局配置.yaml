@@ -1,0 +1,67 @@
+system:
+  version: "1.1"
+  workspace_mode: "git"
+  language: "zh-CN"
+
+git:
+  base_branch: "develop"
+  protected_branches:
+    - main
+    - develop
+  agent_name: "Ag1-NWB"
+
+agents:
+  ag0-nwb:
+    enabled: true
+    log_level: "INFO"
+  ag1-nwb:
+    enabled: true
+    log_level: "INFO"
+  ag2-nwb:
+    enabled: true
+    log_level: "INFO"
+  ag3-nwb:
+    enabled: true
+    log_level: "INFO"
+  ag4-nwb:
+    enabled: true
+    log_level: "INFO"
+  ag5-nwb:
+    enabled: true
+    log_level: "INFO"
+    require_human_gate: true
+    max_followup_requests: 2
+  ag6-nwb:
+    enabled: true
+    log_level: "DEBUG"
+    max_self_review_retries: 2
+  ag7-nwb:
+    enabled: true
+    log_level: "INFO"
+  ag8-nwb:
+    enabled: true
+    log_level: "INFO"
+    auto_trigger_on_chapter入库: true
+
+circuit_breaker:
+  max_retries_per_chapter: 3
+  alert_channel: "webchat"
+
+locks:
+  default_timeout_minutes: 60
+  lock_directory: "配置/.locks/"
+
+paths:
+  static_settings: "静态设定库/"
+  dynamic_data: ".动态数据/"
+  drafts: "中间产物/"
+  pending_human: "待审核/"
+  final_library: "终稿库/章节/"
+  manuscripts: "正文手稿/"
+
+writing_standards:
+  min_chapter_words: 3000
+  max_chapter_words: 6000
+  word_tolerance_percent: 5
+  sensory_density_per_500_words: 1
+  ooc_violation_threshold: 0
