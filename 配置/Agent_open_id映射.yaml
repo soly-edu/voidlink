@@ -1,0 +1,32 @@
+# 飞书 Agent open_id 映射表
+# 更新日期：2026-05-12
+# 来源：Feishu 文档 Novel-World-builder 2026年5月12日
+
+agents:
+  - id: Ag0-NWB
+    name: 调度员
+    open_id: ou_4a560bef37ad431debb5a76d8e2ebc5e
+  - id: Ag1-NWB
+    name: 项目架构师
+    open_id: ou_4ceb9be2cfe10cb8055e6c3b29756944
+  - id: Ag2-NWB
+    name: 世界观构建师
+    open_id: ou_6650c9db237a168b73df6a55ef92bd3b
+  - id: Ag3-NWB
+    name: 故事状态追踪器
+    open_id: ou_05f89b4b646fda164153cfa3e5044aac
+  - id: Ag4-NWB
+    name: 设定解析器
+    open_id: ou_f3a52c1d5adb0d905a294bc31fb096c4
+  - id: Ag5-NWB
+    name: 创作规划师
+    open_id: ou_8ac41b8dee5b5d2d5b0a06f9b600cd21
+  - id: Ag6-NWB
+    name: 正文主笔
+    open_id: ou_8d5a87be8a18bdaa61b6994a155f54f6
+  - id: Ag7-NWB
+    name: 逻辑审查官
+    open_id: ou_491454f690882fa7952fe2366df768a2
+  - id: Ag8-NWB
+    name: 数据守望者
+    open_id: ou_a0adb3738f0c2631624f2ce617d98dff
