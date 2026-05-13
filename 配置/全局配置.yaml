@@ -4,7 +4,7 @@ system:
   language: "zh-CN"
 
 git:
-  base_branch: "develop-Ag1-NWB"
+  base_branch: "develop-multi-qclaw"
   protected_branches:
     - main
     - develop
