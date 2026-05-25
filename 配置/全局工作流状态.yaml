@@ -1,20 +1,25 @@
 # 全局工作流状态
 # 更新日期：2026-05-13
-# 更新原因：人类确认 Ag1-NWB 项目结构重构方案，项目进入「init（重构中）」阶段
+# Issue: #3
 
 项目名称: "虚连之路"
 题材: "奇幻玄幻"
-仓库路径: "D:\\novel\\xu-lian-zhi-lu\\repo"
-当前阶段: "init_rebuild"
-当前章节: 1
+仓库路径: "C:\\Users\\Administrator\\.qclaw\\workspace-agent-c73ad347\\voidlink"
+当前阶段: "story_state"
+当前章节: 3
 已入库章节: 0
 已写初稿章节: 3
-上一阶段状态: null
+章节状态:
+  1: "已写初稿，待审查"
+  2: "已写初稿，待审查"
+  3: "内容待补，待Ag3-NWB介入"
+上一阶段状态: "init_complete"
 重试计数: 0
 活跃追问: []
 活跃Issue: {}
 活跃PR: {}
-活跃Agent:
-  - "Ag1-NWB"
+活跃Agent: []
 上次心跳: {}
-备注: "Phase 1 执行中：Ag1-NWB 主导创建完整法定目录树 + 生成配置模板 + 修正 Git"
+备注: |
+  项目重构 Phase 1+2+3 全完成
+  下一步: Ag3-NWB 更新第3章故事状态

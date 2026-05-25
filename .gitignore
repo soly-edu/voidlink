@@ -13,7 +13,6 @@ build/
 
 # Node
 node_modules/
-*.log
 
 # IDE
 .vscode/
@@ -26,8 +25,16 @@ node_modules/
 ~$*.docx
 ~$*.xlsx
 ~$*.pptx
-.DS_Store
 
-# 其他
-*.bak
+# 日志文件
+日志/*.log
+
+# 锁文件
+配置/.locks/*.lock
+
+# 临时文件
 *.tmp
+*.temp
+*.bak
+
+# 系统文件
