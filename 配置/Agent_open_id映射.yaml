@@ -30,3 +30,6 @@ agents:
   - id: Ag8-NWB
     name: 数据守望者
     open_id: ou_a0adb3738f0c2631624f2ce617d98dff
+  - id: user168943
+    name: 用户168943
+    open_id: ou_0086a6ad4016cd7daab735402d0b6753
