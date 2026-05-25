@@ -1,0 +1,5 @@
+agent: Ag0-NWB
+timestamp: "2026-05-13T14:49:00+08:00"
+issue: "#3"
+type: chore
+description: "更新全局工作流状态路径为 voidlink"

@@ -1,39 +1,56 @@
-# 多Agent协同声明式规范红线
+# GitHub 工作流规范
 
-## 分支策略
+## 分支规范
 
-- `main` 分支：受保护，仅通过 PR 合并，存放稳定版本
-- `{base_branch}` 分支：受保护，所有 Agent 的功能分支从此检出
-- 功能分支命名：`{类型}/{Agent名}/{简述}`，如 `feat/Ag6-NWB/chapter-001`
+| 分支名 | 用途 | 保护级别 |
+|--------|------|----------|
+| `main` | 生产发布 | 🔒 完全保护，仅通过 PR 合并 |
+| `develop-multi-qclaw` | 主开发分支（共享） | 🔒 受保护，仅通过 PR 合并 |
+| `chore/Ag{X}-NWB/...` | Agent 功能分支 | ✓ 可自由推送 |
 
-## 提交规范
+**主分支：`develop-multi-qclaw`**
 
-格式：`{类型}({Agent名}): {描述}`
+- 所有 Agent 共用 `develop-multi-qclaw` 作为基础分支
+- 功能分支命名规范：`{type}/Ag{X}-NWB/{short-description}`
+  - `type`: `chore` / `feat` / `fix` / `docs`
+  - `X`: Agent 编号（0-8）
+  - 示例：`chore/Ag1-NWB/update-config`
 
-类型：
-- `feat`: 新功能（新章节、新设定）
-- `fix`: 修复（逻辑修正、OOC修正）
-- `chore`: 杂务（目录调整、配置更新）
-- `docs`: 文档（README、注释）
-- `refactor`: 重构（结构调整、不改变语义）
+## 预提交检查（Pre-commit Checklist）
 
-## PR 规范
+提交前请确认：
 
-1. 每个 PR 必须关联一个 Issue
-2. PR 标题格式：`{类型}({Agent名}): {描述}`
-3. PR 正文包含：变更摘要、影响范围、自检清单
-4. 人类审核通过后方可合并
+- [ ] 功能分支已从 `develop-multi-qclaw` 检出
+- [ ] 提交信息格式正确：`{type}(Ag{X}-NWB): {简短描述}`
+- [ ] 关联 Issue：`Fixes #{issue_number}`
+- [ ] 文件编码为 UTF-8，无 BOM
+- [ ] 不涉及本地配置文件（如 thinking 配置）
 
-## Agent 协同规则
+## Issue 驱动工作流
 
-1. **单 Agent 单分支**：同一时间每个 Agent 只允许一个活跃功能分支
-2. **锁文件机制**：修改共享文件前必须获取锁（`配置/.locks/` 目录下）
-3. **冲突解决**：先 rebase 后 merge，禁止 force push
-4. **回滚权限**：仅 Ag0-NWB 和人类有权回滚
+1. **创建 Issue**：描述问题/任务
+2. **创建功能分支**：从 `develop-multi-qclaw` 检出
+3. **提交更改**：提交信息包含 `Fixes #{issue_number}`
+4. **创建 PR**：目标分支 `develop-multi-qclaw`，关联 Issue
+5. **审查合并**：Ag0-NWB 审查后合并
+6. **关闭 Issue**：PR 合并后自动关闭
 
-## 禁止事项
+## Agent 专属分支命名规范
 
-- ❌ 禁止直接推送到受保护分支（main、base_branch）
-- ❌ 禁止 force push 到共享分支
-- ❌ 禁止未经获取锁就修改共享状态文件
-- ❌ 禁止在 PR 未通过审核时合并
+| Agent | 功能分支前缀 |
+|-------|--------------|
+| Ag0-NWB | `chore/Ag0-NWB/...` |
+| Ag1-NWB | `chore/Ag1-NWB/...` |
+| Ag2-NWB | `chore/Ag2-NWB/...` |
+| Ag3-NWB | `chore/Ag3-NWB/...` |
+| Ag4-NWB | `chore/Ag4-NWB/...` |
+| Ag5-NWB | `chore/Ag5-NWB/...` |
+| Ag6-NWB | `chore/Ag6-NWB/...` |
+| Ag7-NWB | `chore/Ag7-NWB/...` |
+| Ag8-NWB | `chore/Ag8-NWB/...` |
+
+## 禁止操作
+
+- ❌ 直接推送到 `main` 或 `develop-multi-qclaw`
+- ❌ 在 Issue 中混入本地配置问题（如 thinking 配置）
+- ❌ 功能分支从错误的 base 检出
